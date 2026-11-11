@@ -1,0 +1,900 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #162859;
+    margin: 0;
+}
+
+/* STYLING THE HEADER */
+.page-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #253c78;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.logo {
+    height: 50px; 
+    width: auto; 
+    margin-right: auto; 
+}
+
+/* STYLING THE NAVIGATION */
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-list a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-list a:hover {
+    text-decoration: underline;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+/* STYLING THE HEADER LINKS */
+.header-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    order: 3;
+}
+.search-img, .login-img {
+    height: 30px;
+    width: auto;
+}
+
+/*BODY CONTENT*/
+span {
+    color: white !important;
+}
+
+a.logout-btn {
+    margin: 10px;
+    width: auto;
+    max-width: fit-content;
+    display: inline-block;
+    background: #35cb71;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    gap: 20px;
+    padding: 20px;
+}
+
+.siderbar-left, .sider-right {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.carrusel-container {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.movies-carrusel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrusel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 400px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*estilo flechas*/
+.carrusel-container {
+    position: relative;
+    margin-bottom: 80px; /* deja espacio debajo */
+}
+
+/* Botones */
+.carrusel-arrow {
+    position: absolute;
+    top: 100%;              /* ponerlos debajo */
+    transform: translateY(10px);
+    background: #cf71af;
+    padding: 10px;
+    border-radius: 20%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Iconos: tamaño REAL controlado por CSS */
+.carrusel-arrow img {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* Posiciones */
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+.carrusel-arrow:hover {
+    transform: translateY(10px) scale(1.15);
+    background: #cf71af;
+}
+
+/* fin estilo flecas carousel*/
+
+.wrapper > section { /*espaciado entre secciones*/
+    margin-bottom: 150px;
+}
+
+.now-showing {
+    margin-top: 150px;
+}
+
+.now-showing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+}
+
+.now-showing-header .view-all {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.now-showing-header .view-all:hover {
+    text-decoration: underline;
+    color: #cf71af;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.movie-card {
+    text-align: center;
+    text-decoration: none !important;
+    margin-bottom: 25px;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.rating-text {
+    color: white !important;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+
+h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif ;
+    color: white;
+}
+
+h4 {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+/*STYLING LOGIN&REGISTER*/
+.login-wrapper,
+.register-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section .login-title,
+section .register-title {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.form-login,
+.form-register {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+.form-login,
+.form-register > * {
+    position: relative;
+    z-index: 1;
+}
+
+.form-login label,
+.form-register label {
+    color: white;
+}
+
+.form-login input[type="text"], 
+.form-login input[type="password"],
+.form-register input[type="text"], 
+.form-register input[type="password"] {
+    width: 100%;
+    border-radius: 8px;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.login-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    width: 150px;
+    height: auto;
+    display: block;
+    align-self: center;
+}
+
+.btn-submit {
+    width: 150px;
+    height: auto;
+    display: block;
+    align-self: center;
+
+}
+
+.btn-login:hover,
+.btn-submit:hover {
+    transform: scale(1.05);
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 20%;
+    background: #cf71af;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-back img {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-back:hover {
+    transform: scale(1.1);
+}
+/*SE ACABA STYLING LOGIN&REGISTER*/
+
+
+/*STYLING INFO-MOVIE.PHP*/
+.trailer-btn {
+    display: block;
+    border: none;
+    margin-top: 12px;
+    padding: 10px 18px;
+    background-color: #cf71af;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.trailer-btn:hover {
+    background-color: #cf71af;
+    transform: scale(1.05);
+}
+
+/*Trailer Modal*/
+.trailer-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #cf71af;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.trailer-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.trailer-modal-content iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.trailer-close {
+    display: flex;
+    align-items: center;
+    top: -40px;
+    right: 0;
+    font-size: 32px;
+    color: #35cb71;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*movie*/
+.movie-details {
+    padding:40px
+}
+
+.movie-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20PX;
+    margin-top: 20px;
+}
+
+.movie-image {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    flex-shrink: 0;
+    box-shadow: none !important; 
+}
+
+.movie-image img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.movie-image .trailer-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+}
+
+.movie-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.movie-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.movie-info h3 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.movie-info p, .movie-info p strong {
+    color: white;
+}
+
+.info-details {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.info-details p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.sessions {
+    background-color: #253c78;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #cf71af;
+    box-shadow: 0 0 10px #cf71af;
+    font-weight: bold;
+    display: inline-block;
+    color: white; 
+}
+
+.movie-info form {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 25px;
+}
+
+.movie-info .form-login label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.movie-info .form-tickets {
+    width: 100%;
+    padding: 15px; 
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 2px solid #35cb71;
+    background: white;
+    color: black;
+}
+
+
+.movie-info .btn-submit {
+    width: 50%;
+    margin-top: 5px;    
+    padding: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #35cb71;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: white;
+}
+
+.movie-info .btn-submit:hover {
+    transform: scale(1.05);
+}
+
+
+
+/*STYLE BOOKING INFO*/
+.info-booking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.ticket-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ticket-header h3 {
+    font-family: 'Oswald', sans-serif; 
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+
+.ticket-card {
+    background-color: #253c78;
+    border: 2px solid #35cb71;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.ticket-card h3 {
+    color: #35cb71;
+    font-size: 28px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+
+.info-ticket {
+    text-align: left;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.info-ticket p {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.info-ticket p strong {
+    color: #35cb71;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tickets-left {
+    font-size: 14px !important;
+    color: #35cb71 !important;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.booking-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.booking-actions .btn-submit {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+.print-btn {
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+/* STYLYING ADMIN PANEL*/
+.admin-menu {
+    display: flex;
+    gap: 20px;
+    background: #35cb71;
+    padding: 15px;
+}
+
+.admin-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-menu a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.admin-menu a:visited {
+    color: white;
+}
+
+.admin-menu a:active {
+    color: white;
+}
+
+.admin-table {
+    display: block;
+    width: 100%;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 20px;
+    overflow-x: visible;
+    clear: both;
+}
+
+.admin-container {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto; /*scroll horizontal*/
+    border-radius: 8px;
+}
+
+.manage-table {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 1000px;
+    color: #d7d7d7;
+    margin-bottom: auto;
+}
+
+.manage-table th {
+    background: #35cb71;
+    color: white;
+    padding: 10px;
+}
+
+.manage-table td {
+    background: #d7d7d7;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+/*expand boxes when input*/
+.expand-input {
+    width: 120px;
+    transition: 0.3s;
+}
+
+.expand-input:focus {
+    width: 350px;
+    background: #234555;
+    z-index: 10;
+}
+/*finish expan*/
+
+.add-row {
+    background: #DDDD;
+}
+
+.admin-back {
+    margin-top: 20px;
+}
+
+.admin-back a {
+    text-decoration: none;
+    color: #35cb71;
+    font-weight: bold;
+}
+
+.admin-back a:hover {
+    text-decoration: underline;
+    color: #35cb71;
+    font-weight: bold;
+}
+
+p.admin-alert {
+    color: #cf71af;
+}
+
+/*FOOTER*/
+.footer {
+    background-color: #253c78;
+    padding: 80px 0;
+}
+
+.footer-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #35cb71;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-links ul li a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.footer-links ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+@media(max-width: 1024px) {
+    .page-header {
+        flex-direction: row;
+        gap: 15px;
+        position: relative;
+        z-index: 1100;
+    }
+
+    .header-links, .burger-menu {
+        position: relative;
+        float: right;
+    }
+
+    .burger-menu {
+        display: block;
+        order: 2;
+        margin-left: 20px;
+    }
+
+    .burger-menu.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .burger-menu.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-menu.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-list {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #253c78;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-list a {
+        font-size: 1.5rem;
+        width: 100%;
+        display: block;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-list.active{
+        left: 0;
+    }
+
+    .burger-menu {
+        display: block;
+        z-index: 1001;
+    }
+
+    .movies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .movie-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .movie-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+}
+
+@media(max-width: 480px) {
+    .movies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-list a {
+        font-size: 14px;
+    }
+}

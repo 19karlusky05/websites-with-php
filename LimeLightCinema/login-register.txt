@@ -1,0 +1,61 @@
+THIS IS LOGIN.PHP
+
+<?php 
+include('connection.php'); 
+
+$loginUsername = $_POST["loginUsername"];
+$loginPassword = $_POST["loginPassword"];
+
+echo($username . " " . $password); //testing porpuses
+
+//this sql es to check the users
+$sql = "SELECT * FROM registration_form_0925 WHERE username = '$loginUsername' AND password = '$loginPassword'";
+$result = mysqli_query($con, $sql);
+
+
+// this means mysqli is counting table rows
+$count = mysqli_num_rows($result);
+//If result matchec $username, table row must be 1 row
+if($count==1) {
+    echo"Welcome, you login succesful";
+} else {
+    echo"This user is not registered";
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+THIS IS REGISTER.PHP
+
+<?php
+// Create connection
+include('connection.php'); 
+
+$username = $_POST["username"];
+$password = $_POST["password"];
+$day = $_POST["dob_day"];
+$month = $_POST["dob_month"];
+$year = $_POST["dob_year"];
+
+echo($username . " " . $password. " " . $dob); //testing porpuses
+
+//check if username already exists
+$sql = mysqli_query($con, "SELECT * FROM registration_form_0925 WHERE username='$username'");
+$dob = "$year-$month-$day";
+
+if(mysqli_num_rows($sql) > 0) {
+    echo" Username already exists";
+}
+else {
+    mysqli_query($con, "INSERT INTO registration_form_0925 (username, password, dob) VALUES ('$username', '$password', '$dob')");
+    echo("Username and password were added to the database table");
+}
+?>
